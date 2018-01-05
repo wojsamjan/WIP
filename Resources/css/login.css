@@ -1,0 +1,10 @@
+.signup-form-container{
+    align-content: center;
+    padding-top: 100px;
+    max-width: 60%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+}

@@ -1,0 +1,64 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    /*    max-width: 1440px;*/
+    margin: 0 auto;
+}
+#content{
+    max-width: 1440px;
+    padding-top: 55px;
+    margin: 0 auto !important;
+    float: none !important;
+}
+#LoginButton{
+    margin-top: 7px;
+    color : white;
+    background-color: black;
+    border-width: 1px;
+    border-color : grey;
+}
+#SubmitButton{
+    background-color: black;
+
+}
+.modal-content{
+    margin-top: 300px;
+
+}
+.affix {
+    width: 100%;
+    z-index: 9999 !important;
+}
+
+.affix + .container-fluid {
+    padding-top: 70px;
+}
+
+
+
+footer {
+    height: 200px;
+    background-color: #f2f2f2;
+    padding: 25px;
+    text-align: center;
+
+}
+
+#LikeAndDisliekButtons{
+    float:right;
+    margin-top:15px;
+}
+.input-group-addon.danger {
+    color: rgb(255, 255, 255);
+    background-color: rgb(217, 83, 79);
+    border-color: rgb(212, 63, 58);
+}
+.input-group-addon.success {
+    color: rgb(255, 255, 255);
+    background-color: rgb(92, 184, 92);
+    border-color: rgb(76, 174, 76);
+}
+#ArticleImage{
+    float: left;
+    padding : 7px;
+}
