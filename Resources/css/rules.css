@@ -1,14 +1,84 @@
 
+html {
+    scroll-behavior: smooth
+}
+#easier_reading_msg h2{
+    -webkit-animation-duration: 1s;  /* Safari, Chrome and Opera > 12.1 */  
+    -webkit-animation-name: slidein; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation-duration: 1s;     /* Firefox < 16 */      
+    -moz-animation-name: slidein;    /* Firefox < 16 */      
+    -ms-animation-duration: 1s;      /* Internet Explorer */
+    -ms-animation-name: slidein;     /* Internet Explorer */
+    -o-animation-duration: 1s;       /* Opera < 12.1 */
+    -o-animation-name: slidein;      /* Opera < 12.1 */
+    animation-duration: 1s;
+    animation-name: slidein;
+    border: 5px solid red;
+    border-radius:15px;
+}
+
+@-webkit-keyframes slidein {
+  from {margin-left: 100%;
+        width: 300%;}
+  to {margin-left: 0%;
+      width: 100%;}
+} 
+    
+    
+@-moz-keyframes slidein {
+  from {margin-left: 100%;
+        width: 300%;}
+  to {margin-left: 0%;
+      width: 100%;}
+} 
+    
+@-ms-keyframes slidein {
+  from {margin-left: 100%;
+      width: 300%;}
+  to {margin-left: 0%;
+      width: 100%;}
+} 
+    
+@-o-keyframes slidein {
+  from {margin-left: 100%;
+      width: 300%;}
+  to {margin-left: 0%;
+      width: 100%;}
+} 
+
+@keyframes slidein {
+  from {margin-left: 100%;
+        width: 300%;}
+  to {margin-left: 0%;
+      width: 100%;}
+} 
+
 .main-menu{
+    margin-top:2em;
     background-color: #f2f2f2;
     border-radius: 15px;
-    padding
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 2em;
+    border: 1px solid grey;
     
         
+}
+
+.main-menu li:hover{
+transform: scale(1.01);
+    background-color:darkgray;
+    border-radius: 5px;
 }
 .sublist{
     list-style: none;
     padding: 5px;
+
+}
+.sublist-element{
+/*    background-color:black;*/
+    
+/*    transition: transform .1s ease;*/
+    
 }
 
 #header{
@@ -17,9 +87,15 @@
     background-color: #f2f2f2;
     width: 100%;
     padding-bottom: 10px;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 .rar-content{
-    padding-top: 50px;
+/*    padding-top: 40px;*/
     max-width: 75%;
     margin-left: auto;
     margin-right: auto;
@@ -27,11 +103,14 @@
 .topic{
     padding-top: 10px;
     
+    
 }
 h3{
     background-color: dimgrey;
     padding: 5px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 
 }
 h4{
@@ -41,14 +120,35 @@ h4{
     border-radius: 10px;
 }
 .subtopic {
-    background-color: #f2f2f2;
-   border-radius: 10px; 
-    padding: 10px;
+    margin-bottom:1em;
+    border-radius: 5px; 
+    padding: 5px;
     
     
 }
-.back-to-top-button{
-    margin-left: auto;
-    padding: 10px;
+.subtopic p{
+    font-size: 10px;
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(.7,1.56,.83,.86);
+    font-size:10px;
 
 }
+
+.subtopic p:hover{
+    padding:1em;
+    border-radius: 15px;
+    font-size: 16px;
+    background-color:lightgrey;
+    transition: 0.5s;
+    transition-delay:0.3s;
+    transition-timing-function: cubic-bezier(.7,1.56,.83,.86);
+    
+}
+
+@media (max-width:370px){
+    .subtopic p:hover{
+        margin-top: 15px;
+        margin-bottom: 15px;
+}
+}
+

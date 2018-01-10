@@ -39,7 +39,6 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                         <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-
                     </ul>
                 </div>
             </div>
@@ -47,88 +46,61 @@
         <!--END OF NAVBAR-->
 
         <!--CONTENT-->
+        <div class="container">
+            <h3 id ="site_header">Log in into Your account!</h3>
+            <div id="login_content">
+                <div class="signup-form-container">
+                    <!-- form start -->
+                    <form role="form" id="register-form" autocomplete="off">
+                        <div class="form-header">
+                            <h3 class="form-title">Log In</h3>
+                        </div>
+                        <div class="form-body">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                                    <input name="name" type="text" class="form-control" placeholder="Username">
+                                </div>
+                                <span class="help-block" id="error"></span>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+                                    <input name="email" type="text" class="form-control" placeholder="Email">
+                                </div> 
+                                <span class="help-block" id="error"></span>                     
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-lg-12">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                                        <input name="password" id="password" type="password" class="form-control" placeholder="Password">
+                                    </div>  
+                                    <span class="help-block" id="error"></span>                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn-default" class="btn btn-info">
+                                <span class="glyphicon glyphicon-log-in"></span> Log In
+                            </button>
+                            <div id ="reset_password">Forgot Your Credentials? <button type="button" id = "reset_password_button" onclick="location.href='#';" class="btn btn-default" ><span class="glyphicon glyphicon-remove-sign" pull="right"></span> Reset password</button></div>
+                        </div>
+                    </form>
+                </div>
+                <div id = "additional_information_container">
+                    <h5>Don't have an account yet? </h5>
+                    <button type="button" id = "login_button" onclick="location.href='login.html';" class="btn btn-default" ><span class="glyphicon glyphicon-log-in"></span> Register</button>
+                    <h5 id="need_help">Need some help?</h5>
+                    <button type="button" id="contact_button" onclick="location.href='contact.html';" class="btn btn-default" ><span class="glyphicon glyphicon-envelope"></span> Contact Us</button>
+                    <p id="faq_section"><strong>Or take a look at our<br> Frequently Asked Questions section.</strong></p>
+                    <button type="button" id="faq_button"  onclick="location.href='faq.html';" class="btn btn-default" ><span class="glyphicon glyphicon-book"></span>  FAQ</button>
+                </div>
+            </div> 
+        </div>
+        <!--END OF CONTENT-->
 
-
-     <div class="container">
-
-    <div class="signup-form-container">
-    
-         <!-- form start -->
-         <form role="form" id="register-form" autocomplete="off">
-         
-         <div class="form-header">
-          <h3 class="form-title"><i class="fa fa-user"></i> Log In</h3>
-                      
-                        
-         </div>
-         
-         <div class="form-body">
-                      
-            <div class="form-group">
-                   <div class="input-group">
-                   <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-                   <input name="name" type="text" class="form-control" placeholder="Username">
-                   </div>
-                   <span class="help-block" id="error"></span>
-              </div>
-                        
-              <div class="form-group">
-                   <div class="input-group">
-                   <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
-                   <input name="email" type="text" class="form-control" placeholder="Email">
-                   </div> 
-                   <span class="help-block" id="error"></span>                     
-              </div>
-                        
-              <div class="row">
-                        
-                   <div class="form-group col-lg-12">
-                        <div class="input-group">
-                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                        <input name="password" id="password" type="password" class="form-control" placeholder="Password">
-                        </div>  
-                        <span class="help-block" id="error"></span>                    
-                   </div>
-                            
-                        
-             </div>
-                        
-                        
-            </div>
-            
-            <div class="form-footer">
-                 <button type="submit" class="btn btn-info">
-                 <span class="glyphicon glyphicon-log-in"></span> Sign Me Up !
-                 </button>
-            </div>
-
-
-            </form>
-            
-           </div>
-
- </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--END OF CONTENT-->
-
-<!--FOOTER-->
+        <!--FOOTER-->
         <footer class="container-fluid">
             <div class = "row">
                 <table id = "footer_table" class="table">
@@ -165,8 +137,8 @@
                 </table>
             </div>
         </footer>
-        
-<!--END OF FOOTER-->
+
+        <!--END OF FOOTER-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

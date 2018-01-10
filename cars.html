@@ -6,10 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="Resources/css/stylesheet.css" type="text/css">
+        <link rel="stylesheet" href="Resources/css/cars.css" type="text/css">
+        <link rel="stylesheet" href="Resources/css/car_items.css" type="text/css">
     </head>
     <body>
         <!-- NAVBAR-->
-        <nav class="navbar sticky-top navbar-inverse" data-spy="affix" data-options="scrolltop:false">
+        <nav class="navbar navbar-fixed-top navbar-inverse " data-spy="affix" data-options="scrolltop:false">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarLinks">
@@ -44,56 +46,67 @@
             </div>
         </nav>
         <!--END OF NAVBAR-->
-
+        <h3 id ="site_header">Choose a city to see what's currently available!</h3>
 
         <!--CONTENT-->
         <div id = "content">
             <div id = "cars_content">
-                <h3>Choose a city!</h3>
                 <div id = "city_background_image" ><img id="city_image" src="Resources/images/gdansk.jpg" alt="View of chosen city"></div>
                 <div class="container-fluid">
-                    <div id = "city_buttons">
-                        <button type="button" id = "gdansk_button" class="btn btn-default" onmouseover="pictureChange('gdansk')" onclick="getAvailableCars('gdansk')">Gdańsk</button>
-                        <button type="button" id = "cracow_button" class="btn btn-default" onmouseover="pictureChange('cracow')" onclick="getAvailableCars('cracow')">Cracow</button>
-                        <button type="button" id = "prague_button" class="btn btn-default" onmouseover="pictureChange('prague')" onclick="getAvailableCars('prague')">Prague</button>
-
+                    <div id="city_buttons">
                     </div>
-                </div>        
+                    <script id="city_buttons_template" type= "text/x-handlebars-template">
+                        {{#each this}}
+                        <button type="button" id = "{{city}}_button" class="btn btn-default" onmouseover="pictureChange('{{city}}')" onclick="getAvailableCars('{{city}}')">{{city}}</button>
+                        {{/each}}
+                    </script>
+                </div>
+            </div>        
 
-                <!--PLACE WHERE CARS WILL GO-->
-                <ul id = "cars_container">
+            <!--PLACE WHERE CARS WILL GO-->
+            <ul id = "cars_container">
 
-                </ul>
+            </ul>
 
-                <!--TEMPLATE FOR CARS-->
-                <script id="cars_template" type= "text/x-handlebars-template">
-
-                    <ul class="list-unstyled" class="car-list">
+            <!--TEMPLATE FOR CARS-->
+            <script id="cars_template" type= "text/x-handlebars-template">
+                <ul class="list-unstyled" class="car-list">
+                    <center><h4>If the item You are interested in is tagged as unavailable, contact us for more information.</h4></center>
                         {{#each this}}
                         {{#if this.available}}
-
-                        <li class ="car-list-element">
-                            <h3 class="car-name"><a href="#">{{name}}</a></h3>      
-
-                            <button type="button" id = "rent_button" class="btn btn-default" onclick="">Rent</button> 
-
-
-                            <img class = "car-picture" src="Resources/images/cars/175x125.png" alt="Picture of {{name}}">
-                            <ul class= "car-info-list">
-                                <li><strong>Car make and model:</strong> {{name}}</li>
-                                <li><strong>Price/day:</strong> {{price}}</li>
-                                <li><strong>Transmission:</strong>  {{transmission}}</li>
-                                <li><strong>Drive:</strong> {{drive}}</li>
-                            </ul>
-                        </li>
-
+                            <li class ="car-list-element">
+                                <h3 class="car-name"><a href="#">{{name}}</a></h3>      
+                                    <button type="button" id = "rent_button" class="btn btn-default" onclick="">Rent</button> 
+                                        <img class = "car-picture" src="Resources/images/cars/175x125.png" alt="Picture of {{name}}">
+                                            <!--                            <div class="car-description">{{description}}</div>-->
+                                            <ul class= "car-info-list">
+                                                <li><strong>Car make and model:</strong> {{name}}</li>
+                                                <li><strong>Price/day:</strong> {{price}}</li>
+                                                <li><strong>Transmission:</strong>  {{transmission}}</li>
+                                                <li><strong>Drive:</strong> {{drive}}</li>
+                                            </ul>
+                            </li>
                         {{/if}}
                         {{/each}}
-                    </ul>
-                </script>
-
-
-            </div>
+    
+                    {{#each this}}
+                    {{#unless this.available}}
+                    <li class ="car-list-element">
+                        <h3 class="car-name"><a href="#">{{name}}<br><span>(Currently unavailable)</span></a></h3>      
+                            <button type="button" id = "rent_button" class="btn btn-default" onclick="">Rent</button> 
+                                <img class = "car-picture" src="Resources/images/cars/175x125.png" alt="Picture of {{name}}">
+                                    <!--                            <div class="car-description">{{description}}</div>-->
+                                        <ul class= "car-info-list">
+                                            <li><strong>Car make and model:</strong> {{name}}</li>
+                                            <li><strong>Price/day:</strong> {{price}}</li>
+                                            <li><strong>Transmission:</strong>  {{transmission}}</li>
+                                            <li><strong>Drive:</strong> {{drive}}</li>
+                                        </ul>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </script>
         </div>
         <!--END OF CONTENT-->
 
@@ -141,7 +154,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="Resources/JavaScript/handlebars-v4.0.11.js"></script>
+        <script src="Resources/JavaScript/cars_items.js"></script>
         <script src="Resources/JavaScript/cars.js"></script>
+
     </body>
 </html>
 

@@ -6,10 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="Resources/css/stylesheet.css" type="text/css">
+        <link rel="stylesheet" href="Resources/css/contact.css" type="text/css">
     </head>
     <body>
         <!-- NAVBAR-->
-        <nav class="navbar sticky-top navbar-inverse" data-spy="affix" data-options="scrolltop:false">
+        <nav class="navbar navbar-fixed-top navbar-inverse " data-spy="affix" data-options="scrolltop:false">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarLinks">
@@ -44,53 +45,13 @@
             </div>
         </nav>
         <!--END OF NAVBAR-->
-
+        <h3 id ="site_header">Contact Us!</h3>
         <!--CONTENT-->
 
-        <div id = "content">
-            <!--Login-->
-            <div class="modal fade" id="popUpWindow">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-
-                        <!-- header -->
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h3 class="modal-title">Log In</h3>
-                        </div>
-
-                        <!-- body (form) -->
-                        <div class="modal-body">
-                            <form role="form">
-
-                                <div class="form-group">
-                                    <label for="validate-email">E-mail Adress:</label>
-                                    <div class="input-group" data-validate="email">
-                                        <input type="text" class="form-control" name="validate-email"  placeholder="name@example.com" required>
-                                        <span class="input-group-addon danger"><span class="glyphicon glyphicon-remove"></span></span>
-                                    </div>
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="EnterPassword">Password:</label>
-                                    <input type="password" name="EnterPassword" class="form-control" placeholder="Password">
-                                </div>
-                            </form>  
-                        </div>
-                        <!-- button -->
-                        <div class="modal-footer">
-                            <button id="SubmitButton"  class="btn btn-primary btn-block">Submit</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>    
-        <!--End of Login-->
         <!--Contact Form-->
         <div class="container">
 
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <div class="form-area">  
                     <form role="form">
                         <h3 >Contact Us</h3>
@@ -114,14 +75,14 @@
                             <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
                         </div>
 
-                        <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit</button>
+                        <button type="button" id="submit" name="submit" class="btn btn-default pull-right">Submit</button>
                     </form>
                 </div>
             </div>
             <div class = "container fluid">
-                <div class="col-md-7"><div class = "ContactInformation">
-                    <h3>Contact Information</h3>
-                    <br>
+                <div class="col-md-6" id="contact-information">
+                    <h3>Main Office</h3>
+
                     <h4>Address:</h4>
                     <p> Company Name</p>
                     <p> dsadsa lane 54</p>
@@ -142,10 +103,10 @@
                     <p> Friday: 8:00 - 22:00</p>
                     <p> Saturday: 8:00 - 22:00</p>
                     <p> Sunday: 8:00 - 22:00</p>
-                    </div>
                 </div>
             </div>
         </div>
+
 
 
         <!--END OF CONTENT-->

@@ -31,10 +31,7 @@ $(document).ready(function() {
     });
 
     $('.input-group input[required], .input-group textarea[required], .input-group select[required]').trigger('change');
-
-
 });
-
 
 $(document).ready(function(){ 
     $('#characterLeft').text('300 characters left');

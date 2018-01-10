@@ -1,0 +1,123 @@
+#cars_content{
+     margin-left: auto;
+    margin-right: auto;
+    
+}
+#cars_content h3{
+    text-align: center;
+    max-width: 1440px;
+    height: 50px;
+    padding-top: 10px;
+      
+}
+h3{
+    line-height: 80%;
+}
+h3 span{
+    color:darkred;
+    font-size:15px;
+}
+
+.car-list{
+    position: absolute;
+    width: 50%;
+    height: 25%;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+    
+}
+.car-list-element{
+    position: relative;
+    list-style-type: none;
+    height: 15%;
+    margin-left: -3em;
+    margin-right: auto;
+    margin-bottom: 25px;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.car-name{
+    position: relative;
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: dimgray;
+    margin-bottom: 15px;
+    height: 2em;
+    
+}
+#rent_button{
+   float: right;
+    position: relative;
+    margin-top: -4em;
+    margin-right: 1em;
+    border-radius: 10px;
+}
+.car-picture{
+    position: relative;
+    margin-top: -15px;
+    margin-bottom: auto;
+    border-bottom-left-radius: 15px;
+    
+}
+.car-info-list{
+    position: relative;
+    padding: 10px;
+    padding-bottom: 2.5em;
+    margin-top: -15px;
+    list-style-type: none;
+   background-color: #d6d6c2;
+    float: right;
+    border-bottom-right-radius: 15px;
+
+}
+@media  (max-width:435px){
+    .car-list-element{
+    margin-bottom: 125px;
+    
+}
+    .car-info-list{
+        margin-top: 1px;
+        border-radius: 15px;
+        padding-bottom:15px
+}
+
+
+
+

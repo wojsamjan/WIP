@@ -1,10 +1,60 @@
-.signup-form-container{
-    align-content: center;
-    padding-top: 100px;
-    max-width: 60%;
-}
 
-footer {
+#register_content{
+    padding-top: 10em;
+    width: 100%;
+    max-width: 100%;
+    margin-left:5.5em;
+    margin-right:auto;
+    text-align: center;
+
+}
+.signup-form-container{
+
+    max-width: 60%;
+    float: left;
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2), 0 3px 1px 0 rgba(0, 0, 0, 0.19);
+    padding: 1.3em;
+    border-radius: 15px;
+}
+    footer {
     position: absolute;
     bottom: 0px;
+}
+
+
+
+#additional_information_container{
+    float: right;
+    padding: 1em;
+    border-radius: 15px;
+    margin-right: 12em;
+/*    margin-top: 1em;*/
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+#need_help{
+    margin-top: 1em;
+}
+#faq_section{
+    margin-top:1em;
+}
+@media (max-width: 1199px){
+    #register_content{
+    padding-top: 5em;
+}
+    #additional_information_container{
+        float: left;
+        margin-top: 2em;
+       max-width:70%;
+    }
+    .signup-form-container{
+        max-width: 60%;
+        float:left;
+    }
+    footer {
+    position: relative;
+    bottom: 0px;
+}
+
 }

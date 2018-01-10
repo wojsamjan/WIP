@@ -4,7 +4,6 @@ function pictureChange(city){
     var fullpath = "Resources/images/".concat(citystring).concat(".jpg");
     document.getElementById('city_image').src=fullpath;
 };
-
 //Get items
 function getItems(city){
     var chosenCity= city;
@@ -29,7 +28,6 @@ function getItems(city){
         }
     })
 }
-
 //Handlebars engine for html template
 function HTMLGeneratorForItemList(data, id){
     var rawTemplate = document.getElementById("items_template").innerHTML;

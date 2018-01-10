@@ -4,9 +4,7 @@ function pictureChange(city){
     var fullpath = "Resources/images/".concat(citystring).concat(".jpg");
     document.getElementById('city_image').src=fullpath;
 };
-
 //Function to get cars from the server
-//note. filtering for available ones is made by handlebars
 function getAvailableCars(city){
     var $list_of_cars= $('#list_of_cars');
     var chosenCity= city;
@@ -35,6 +33,7 @@ function getAvailableCars(city){
 //Handlebars template engine for list display on website
 function HTMLGeneratorForCarList(data, id){
     var rawTemplate = document.getElementById("cars_template").innerHTML;
+    console.log(rawTemplate);
     var compiledTemplate = Handlebars.compile(rawTemplate);
     var generatedHTML = compiledTemplate(data);
     var cars_container = document.getElementById("cars_container");
