@@ -1,20 +1,14 @@
-// JavaScript Validation For Registration Page
-$('document').ready(function()
-                    {    
+$('document').ready(function(){
     // name validation
     var nameregex = /^[a-zA-Z ]+$/;
-
     $.validator.addMethod("validname", function( value, element ) {
         return this.optional( element ) || nameregex.test( value );
     }); 
-
     // valid email pattern
     var eregex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
     $.validator.addMethod("validemail", function( value, element ) {
         return this.optional( element ) || eregex.test( value );
     });
-
     $("#register-form").validate({
 
         rules:
@@ -71,9 +65,7 @@ $('document').ready(function()
 
         submitHandler: function(form) {
             form.submit();
-            alert('ok');
+
         }
     }); 
 })
-
-

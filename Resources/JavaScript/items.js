@@ -7,27 +7,43 @@ function pictureChange(city){
 //Get items
 function getItems(city){
     var chosenCity= city;
+    var request_url= 'http://127.0.0.1:5000/'+ city +'/items'
     $.ajax({
         type: 'GET',
         contentType: "application/json",
-        url: 'http://127.0.0.1:5000/branches',
+        url: request_url,
         success: function(data){
-            var branchesArray = data.branches;
-            var chosenCityId = 999;
+            $.each(data, function(index, item){
+                HTMLGeneratorForItemList(item, index);  
+            })
 
-            $.each(branchesArray, function(index, branch){
-                var itemsArray = branch.items;
-                if (branch.city === chosenCity){
-                    chosenCityId = branch.id;
 
-                    $.each(itemsArray, function(index, item){
-                        HTMLGeneratorForItemList(itemsArray, index);  
-                    })
-                }
+        }
+    })
+}
+
+function getAvailableCars(city){
+    var $list_of_cars= $('#list_of_cars');
+    var chosenCity= city;
+    console.log(chosenCity);
+    console.log('http://127.0.0.1:5000/'+ city +'/cars');
+    var request_url= 'http://127.0.0.1:5000/'+ city +'/cars'
+    $.ajax({
+        type: 'GET',
+        contentType: "application/json",
+        url: request_url,
+        success: function(data){
+            $.each(data, function(index, cars){
+                $.each(cars, function(index, car){
+                    HTMLGeneratorForCarList(cars, index);  
+                })
+
             })
         }
     })
 }
+
+
 //Handlebars engine for html template
 function HTMLGeneratorForItemList(data, id){
     var rawTemplate = document.getElementById("items_template").innerHTML;

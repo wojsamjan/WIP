@@ -3,6 +3,7 @@
     background-color: indianred;
     border-color: indianred;
 }
+
 .input-group-addon.success {
     color: white;
     background-color: forestgreen;
@@ -12,6 +13,7 @@
 .red{
     color:red;
 }
+
 .form-area
 {
     position:relative;
@@ -57,7 +59,7 @@
 }
 
 @keyframes form_arrive {
-   from {left: -1000px;}
+    from {left: -1000px;}
     to {left: 0;}
 }
 .form-area h3{
@@ -91,25 +93,29 @@
     animation-duration: 1s;    
     animation-fill-mode: forwards;
 }
+
 @-webkit-keyframes contact_arrive {
     from {right: -1000px;}
     to {right: 0;}
 }
+
 @-moz-keyframes contact_arrive {
     from {right: -1000px;}
     to {right: 0;}
 }
+
 @-ms-keyframes contact_arrive {
     from {right: -1000px;}
     to {right: 0;}
 }
+
 @-o-keyframes contact_arrive {
     from {right: -1000px;}
     to {right: 0;}
 }
 
 @keyframes contact_arrive {
-   from {right: -1000px;}
+    from {right: -1000px;}
     to {right: 0;}
 }
 
@@ -118,20 +124,26 @@
     background-color:dimgrey;
     border-top-right-radius:25px;
     border-top-left-radius:25px;
-    
 }
+
 #contact-information h4{
     width: 100%;
     background-color:dimgrey;
-    
-    
-    
 }
 
 #contact-information p{
-
-line-height: 70%;
+    line-height: 70%;
 }
 footer{
     margin-top:3%;
 }
+
+/*
+#branch_list_container ul{
+height:300px;
+width:20%;
+overflow:hidden;
+overflow-y:scroll;
+position: relative;
+}
+*/

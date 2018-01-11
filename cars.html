@@ -25,7 +25,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="articles.html">News</a></li>
-                        <li class="dropdown">
+                        <li class="active" class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Rental
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -40,7 +40,6 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                         <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-
                     </ul>
                 </div>
             </div>
@@ -54,18 +53,20 @@
                 <div id = "city_background_image" ><img id="city_image" src="Resources/images/gdansk.jpg" alt="View of chosen city"></div>
                 <div class="container-fluid">
                     <div id="city_buttons">
-                    </div>
+<!--
                     <script id="city_buttons_template" type= "text/x-handlebars-template">
                         {{#each this}}
                         <button type="button" id = "{{city}}_button" class="btn btn-default" onmouseover="pictureChange('{{city}}')" onclick="getAvailableCars('{{city}}')">{{city}}</button>
                         {{/each}}
                     </script>
+-->
+                    <button type="button" id = "gdansk_button" class="btn btn-default" onmouseover="pictureChange('gdansk')" onclick="getAvailableCars('gdansk')">Gdansk</button>
+                    <button type="button" id = "cracow_button" class="btn btn-default" onmouseover="pictureChange('cracow')" onclick="getAvailableCars('cracow')">Cracow</button>
+                    <button type="button" id = "prague_button" class="btn btn-default" onmouseover="pictureChange('prague')" onclick="getAvailableCars('prague')">Prague</button></div>
                 </div>
             </div>        
-
             <!--PLACE WHERE CARS WILL GO-->
             <ul id = "cars_container">
-
             </ul>
 
             <!--TEMPLATE FOR CARS-->
@@ -75,12 +76,12 @@
                         {{#each this}}
                         {{#if this.available}}
                             <li class ="car-list-element">
-                                <h3 class="car-name"><a href="#">{{name}}</a></h3>      
+                                <h3 class="car-name"><a href="#">{{vendor}} {{model}}</a></h3>      
                                     <button type="button" id = "rent_button" class="btn btn-default" onclick="">Rent</button> 
-                                        <img class = "car-picture" src="Resources/images/cars/175x125.png" alt="Picture of {{name}}">
+                                        <img class = "car-picture" src="http://via.placeholder.com/175x125?text={{vendor}} {{model}}" alt="Picture of {{vendor}} {{model}}">
                                             <!--                            <div class="car-description">{{description}}</div>-->
                                             <ul class= "car-info-list">
-                                                <li><strong>Car make and model:</strong> {{name}}</li>
+                                                <li><strong>Car make and model:</strong> {{vendor}} {{model}}</li>
                                                 <li><strong>Price/day:</strong> {{price}}</li>
                                                 <li><strong>Transmission:</strong>  {{transmission}}</li>
                                                 <li><strong>Drive:</strong> {{drive}}</li>
@@ -92,12 +93,12 @@
                     {{#each this}}
                     {{#unless this.available}}
                     <li class ="car-list-element">
-                        <h3 class="car-name"><a href="#">{{name}}<br><span>(Currently unavailable)</span></a></h3>      
+                        <h3 class="car-name"><a href="#"> {{vendor}} {{model}}<br><span>(Currently unavailable)</span></a></h3>      
                             <button type="button" id = "rent_button" class="btn btn-default" onclick="">Rent</button> 
-                                <img class = "car-picture" src="Resources/images/cars/175x125.png" alt="Picture of {{name}}">
+                                <img class = "car-picture" src="http://via.placeholder.com/175x125?text={{vendor}} {{model}}" alt="Picture of {{vendor}} {{model}}">
                                     <!--                            <div class="car-description">{{description}}</div>-->
                                         <ul class= "car-info-list">
-                                            <li><strong>Car make and model:</strong> {{name}}</li>
+                                            <li><strong>Car make and model:</strong> {{vendor}} {{model}}</li>
                                             <li><strong>Price/day:</strong> {{price}}</li>
                                             <li><strong>Transmission:</strong>  {{transmission}}</li>
                                             <li><strong>Drive:</strong> {{drive}}</li>

@@ -8,23 +8,24 @@ function pictureChange(city){
 function getAvailableCars(city){
     var $list_of_cars= $('#list_of_cars');
     var chosenCity= city;
-
+    console.log(chosenCity);
+console.log('http://127.0.0.1:5000/'+ city +'/cars'
+);
+    var request_url= 'http://127.0.0.1:5000/'+ city +'/cars'
     $.ajax({
         type: 'GET',
         contentType: "application/json",
-        url: 'http://127.0.0.1:5000/branches',
+        url: request_url,
         success: function(data){
-            var branchesArray = data.branches;
-            var chosenCityId = 999;
-
-            $.each(branchesArray, function(index, branch){
-                var carsArray = branch.cars;
-                if (branch.city === chosenCity){
-                    chosenCityId = branch.id;
-                    $.each(carsArray, function(index, car){
-                        HTMLGeneratorForCarList(carsArray, index);  
+//            var branchesArray = data;
+//            console.log(branchesArray);
+//            var chosenCityId = 999;
+            $.each(data, function(index, cars){
+//                var carsArray = cars;
+//                console.log(carsArray);
+                    $.each(cars, function(index, car){
+                        HTMLGeneratorForCarList(cars, index);  
                     })
-                }
             })
         }
     })

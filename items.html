@@ -11,7 +11,7 @@
     </head>
     <body>
         <!-- NAVBAR-->
-       <nav class="navbar navbar-fixed-top navbar-inverse " data-spy="affix" data-options="scrolltop:false">
+        <nav class="navbar navbar-fixed-top navbar-inverse " data-spy="affix" data-options="scrolltop:false">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarLinks">
@@ -25,7 +25,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="articles.html">News</a></li>
-                        <li class="dropdown">
+                        <li class="active" class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Rental
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -40,71 +40,77 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                         <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-
                     </ul>
                 </div>
             </div>
         </nav>
         <!--END OF NAVBAR-->
- <h3 id ="site_header">Choose a city to see what's currently available!</h3>
+        <h3 id ="site_header">Choose a city to see what's currently available!</h3>
         <!--CONTENT-->
         <div id = "content">
             <div id = "items_content">
                 <div id = "city_background_image"><img id="city_image" src="Resources/images/gdansk.jpg" alt="View of chosen city"></div>
                 <div class="container-fluid">
-                        <div id="city_buttons">
-                        </div>
-                    <script id="city_buttons_template" type= "text/x-handlebars-template">
-                        {{#each this}}
-                            <button type="button" id = "{{city}}_button" class="btn btn-default" onmouseover="pictureChange('{{city}}')" onclick="getItems('{{city}}')">{{city}}</button>
-                        {{/each}}
-                        </script>
+                    <div id="city_buttons">
+
+                        <!--
+                                <script id="city_buttons_template" type= "text/x-handlebars-template">
+                                {{#each this}}
+                                <button type="button" id = "{{city}}_button" class="btn btn-default" onmouseover="pictureChange('{{city}}')" onclick="getItems('{{city}}')">{{city}}</button>
+                                {{/each}}
+                                </script>
+                                -->
+                        <button type="button" id = "gdansk_button" class="btn btn-default" onmouseover="pictureChange('gdansk')" onclick="getItems('gdansk')">Gdansk</button>
+                        <button type="button" id = "cracow_button" class="btn btn-default" onmouseover="pictureChange('cracow')" onclick="getItems('cracow')">Cracow</button>
+                        <button type="button" id = "prague_button" class="btn btn-default" onmouseover="pictureChange('prague')" onclick="getItems('prague')">Prague</button>
                     </div>
-                </div>        
-                    <ul id = "items_container">
-                    </ul>  
+
+                </div>
+            </div>        
+            <ul id = "items_container">
+            </ul>  
             <!--TEMPLATE FOR ITEMS-->
             <script id="items_template" type= "text/x-handlebars-template">
                 <ul class="list-unstyled" class="item-list">
                     <center><h4 id="unavailable_info">If the item You are interested in is tagged as unavailable, contact us for more information.</h4></center>
-                        {{#each this}}
-                            {{#if available}}
-                             <li class ="item-list-element">
-                                 <h3 class="item-name">{{name}}</h3>
-                                  <button type="button" id = "rent_button" class="btn btn-default" onclick="">Rent</button> 
-                                 <img class = "item-picture" src="Resources/images/cars/175x125.png" alt="Picture of {{name}}">
-                                 <ul  class= "item-info-list">
-                                    <li><strong>Item name:</strong> <br>{{name}}</li>
-                                    <li><strong>Item type:</strong>  <br>{{item_type}}</li>
-                                    <li><strong>Price/day:</strong> <br>{{price}}</li>
-                                 </ul>
-                            </li>
+                    {{#each this}}
+                    {{#if available}}
+                    <li class ="item-list-element">
+                        <h3 class="item-name">{{vendor}} {{model}}</h3>
+                        <button type="button" id = "rent_button" class="btn btn-default" onclick="">Rent</button> 
+                        <img class = "item-picture" src="http://via.placeholder.com/175x125?text={{vendor}} {{model}}" alt="Picture of {{vendor}} {{model}}">
+                        <ul  class= "item-info-list">
+                            <li><strong>Item name:</strong> <br>{{vendor}} {{model}}</li>
+                            <li><strong>Item type:</strong>  <br>{{item_type}}</li>
+                            <li><strong>Price/day:</strong> <br>{{price}}</li>
+                                </ul>
+                                </li>
 
-                        {{/if}}
-                        {{/each}}
+                    {{/if}}
+                    {{/each}}
 
                     {{#each this}}
                     {{#unless available}}
-                         <li class ="item-list-element">
-                             <h3 class="item-name">{{name}}<br><span>(Currently unavailable)</span></h3>
-                              <button type="button" id = "rent_button" class="btn btn-default" onclick="">Rent</button> 
-                             <img class = "item-picture" src="Resources/images/cars/175x125.png" alt="Picture of {{name}}">
-                             <ul  class= "item-info-list">
-                                <li><strong>Item name:</strong> <br>{{name}}</li>
-                                <li><strong>Item type:</strong>  <br>{{item_type}}</li>
-                                <li><strong>Price/day:</strong> <br>{{price}}</li>
-                             </ul>
-                        </li>
+                    <li class ="item-list-element">
+                        <h3 class="item-name">{{vendor}} {{model}}<br><span>(Currently unavailable)</span></h3>
+                        <button type="button" id = "rent_button" class="btn btn-default" onclick="">Rent</button> 
+                        <img class = "item-picture" src="http://via.placeholder.com/175x125?text={{vendor}} {{model}}" alt="Picture of {{vendor}} {{model}}">
+                        <ul  class= "item-info-list">
+                            <li><strong>Item name:</strong> <br>{{vendor}} {{model}}</li>
+                            <li><strong>Item type:</strong>  <br>{{item_type}}</li>
+                            <li><strong>Price/day:</strong> <br>{{price}}</li>
+                                </ul>
+                                </li>
                     {{/unless}}
                     {{/each}}
-                </ul>
-                </script>
+                                </ul>
+            </script>
         </div>   
- 
-<!--END OF CONTENT-->
 
-<!--FOOTER-->
-   <footer class="container-fluid">
+        <!--END OF CONTENT-->
+
+        <!--FOOTER-->
+        <footer class="container-fluid">
             <div class = "row">
                 <table id = "footer_table" class="table">
                     <thead>
@@ -140,9 +146,8 @@
                 </table>
             </div>
         </footer>
-        
-        
-<!--END OF FOOTER-->
+
+        <!--END OF FOOTER-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="Resources/JavaScript/handlebars-v4.0.11.js"></script>
@@ -150,4 +155,3 @@
         <script src="Resources/JavaScript/cars_items.js"></script>
     </body>
 </html>
-
